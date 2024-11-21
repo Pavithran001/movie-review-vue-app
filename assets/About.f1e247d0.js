@@ -1,1 +1,0 @@
-import{d as o,_ as t,o as s,c as a,a as n}from"./index.b4de1545.js";const r=o({name:"About"}),c={class:"about"};function d(p,e,u,_,f,i){return s(),a("div",c,e[0]||(e[0]=[n("h1",null,"About Page",-1)]))}const m=t(r,[["render",d]]);export{m as default};
