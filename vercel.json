@@ -8,12 +8,12 @@
       "source": "/(.*)",
       "headers": [
         {
-          "key": "Cross-Origin-Opener-Policy",
-          "value": "same-origin"
+          "key": "Content-Type",
+          "value": "text/javascript"
         },
         {
-          "key": "Cross-Origin-Embedder-Policy",
-          "value": "require-corp"
+          "key": "Permissions-Policy",
+          "value": "interest-cohort=()"
         }
       ]
     }

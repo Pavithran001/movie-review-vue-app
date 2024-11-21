@@ -3,22 +3,25 @@ import vue from '@vitejs/plugin-vue'
 import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
+  base: '/movie-review-vue-app/',
   plugins: [vue()],
-  base: './',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
-    },
-    extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue']
+    }
   },
   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
     rollupOptions: {
-      output: {
-        format: 'es',
-        entryFileNames: '[name].[hash].js',
-        chunkFileNames: '[name].[hash].js',
-        assetFileNames: '[name].[hash][extname]'
+      input: {
+        main: fileURLToPath(new URL('./index.html', import.meta.url))
       }
+    }
+  },
+  server: {
+    headers: {
+      'Content-Type': 'text/javascript'
     }
   }
 })
