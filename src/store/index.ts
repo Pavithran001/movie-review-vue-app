@@ -1,15 +1,19 @@
 import { createStore } from 'vuex'
+import type { InjectionKey } from 'vue'
 
+// Define your state type
 interface State {
   count: number
+  // Add other state properties here
 }
 
-export default createStore<State>({
+// Define injection key
+export const key: InjectionKey<Store<State>> = Symbol()
+
+export const store = createStore<State>({
   state: {
     count: 0
-  },
-  getters: {
-    doubleCount: (state) => state.count * 2
+    // Add other state properties here
   },
   mutations: {
     increment(state) {
@@ -22,5 +26,10 @@ export default createStore<State>({
         commit('increment')
       }, 1000)
     }
+  },
+  getters: {
+    doubleCount: (state) => state.count * 2
   }
-}) 
+})
+
+export default store 
